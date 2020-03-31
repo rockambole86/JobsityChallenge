@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace JC.Site
 {
-    public class Db
+    public class Db : IDbContext
     {
         public SqlCommand     cmd = new SqlCommand();
         public SqlDataAdapter sda;
@@ -62,5 +62,15 @@ namespace JC.Site
 
             return retVal;
         }
+    }
+
+    public interface IDbContext
+    {
+        bool IsExist(string query);
+
+        bool ExecuteQuery(string query);
+
+        string GetColumnVal(string query, string columnName);
+
     }
 }

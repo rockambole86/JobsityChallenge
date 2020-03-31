@@ -14,7 +14,7 @@ namespace JC.Site
     {
         private static readonly List<Users>    _connectedUsers = new List<Users>();
         private static readonly List<Messages> _currentMessage = new List<Messages>();
-        private readonly        Db      _db          = new Db();
+        private readonly        Db             _db             = new Db();
 
         public ChatHub()
         {
